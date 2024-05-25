@@ -194,10 +194,10 @@
 
 /* Mobile Screen */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .pop-up-modal {
-    width: 350px;
-    height: 550px;
+    width: 95vw;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     bottom: 15px;
