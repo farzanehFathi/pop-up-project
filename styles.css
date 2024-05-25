@@ -4,6 +4,17 @@
   --primary: #ed6538;
 }
 
+/* Success & Pop Up CARD */
+
+.pop-up-card,
+.success-card {
+  background: white;
+  font-family: "Poppins";
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 3000;
+}
+
 /* Pop Up CARD */
 
 .pop-up-card {
@@ -11,11 +22,6 @@
   height: 300px;
   display: flex;
   justify-content: center;
-  background: white;
-  font-family: "Poppins";
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 3000;
 }
 
 /* Children */
@@ -49,7 +55,8 @@
   margin-bottom: 20px;
 }
 
-.pop-up-txt-side .txt-box h2 {
+.pop-up-txt-side .txt-box h2,
+.success-card h2 {
   font-weight: 700;
   font-size: 30px;
   margin: 0 0 5px 0;
@@ -98,6 +105,39 @@
   font-size: 10px;
   color: gray;
 }
+
+/* Success CARD */
+
+.success-card {
+  width: 270px;
+  height: 300px;
+  padding: 70px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.success-card .fa-check {
+  color: var(--primary);
+  font-size: 40px;
+  padding: 20px;
+  border-radius: 40%;
+  box-shadow: 0 12px 25px #ed65384b;
+  margin: 30px 0;
+}
+
+.social-icons {
+  font-size: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Mobile Screen */
 
 @media screen and (max-width: 768px) {
   .pop-up-card {
