@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --primary: #ed6538;
+}
+
+/* Pop Up CARD */
+
+.pop-up-card {
+  width: 600px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  background: white;
+  font-family: "Poppins";
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 3000;
+}
+
+/* Image Side */
+
+.pop-up-img-side,
+.pop-up-txt-side {
+  width: 50%;
+  height: 100%;
+}
+
+.pop-up-img-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+/* Text Side */
+
+.pop-up-txt-side {
+  text-align: center;
+  padding: 30px;
+}
+
+/* Text Side: Text Box */
+
+.pop-up-txt-side .txt-box {
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.pop-up-txt-side .txt-box h2 {
+  font-weight: 700;
+  font-size: 30px;
+  margin: 0 0 5px 0;
+}
+.pop-up-txt-side .txt-box p {
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Text Side: FORM */
+
+.pop-up-txt-side .email,
+.pop-up-txt-side .submit {
+  display: block;
+  width: 100%;
+}
+
+.pop-up-txt-side .email {
+  box-sizing: border-box;
+  height: 30px;
+  color: gray;
+}
+
+.pop-up-txt-side .submit {
+  height: 30px;
+  width: 100%;
+  background: var(--primary);
+  border: solid 1px var(--primary);
+  border-radius: 5px;
+  color: white;
+}
+
+.pop-up-txt-side .submit:hover {
+  background: white;
+  color: var(--primary);
+  transition: 1ms ease-in-out;
+  cursor: pointer;
+}
+
+.pop-up-txt-side .check-box {
+  display: flex;
+}
+
+.pop-up-txt-side .check-box p,
+.pop-up-txt-side .check-box a {
+  font-size: 10px;
+  color: gray;
+}
