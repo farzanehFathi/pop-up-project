@@ -1,26 +1,22 @@
+// Select Objects
+
 const popUpModal = document.querySelector(".pop-up-modal");
 const successModal = document.querySelector(".success-modal");
 const overlay = document.querySelector(".overlay");
 
 const form = document.querySelector("form");
 const emailInput = document.querySelector(".email");
-const policyCheckBox = document.querySelector(".check-box input");
+const policyCheckBox = document.querySelector(
+  ".check-box input[type='checkbox']"
+);
+const errMsg = document.querySelector(".errMsg");
 const closeSuccessBtn = document.querySelector(".close-sccss-btn");
 
+// Define Functions
 const ShowPopUp = () => {
   if (popUpModal === null) return;
   popUpModal.classList.add("active");
   overlay.classList.add("active");
-};
-
-const closePopUp = () => {
-  if (popUpModal === null) return;
-  popUpModal.classList.remove("active");
-};
-
-const openSuccess = () => {
-  if (successModal === null) return;
-  successModal.classList.add("active");
 };
 
 const closeSuccess = () => {
@@ -28,14 +24,24 @@ const closeSuccess = () => {
   overlay.classList.remove("active");
 };
 
+// Open Pop Up
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(ShowPopUp, 1000);
 });
 
+// Submit the Form
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  popUpModal.classList.remove("active");
-  successModal.classList.add("active");
+
+  const isPolicyChecked = policyCheckBox.checked;
+  if (!isPolicyChecked) {
+    errMsg.classList.add("active");
+  } else {
+    popUpModal.classList.remove("active");
+    successModal.classList.add("active");
+    errMsg.classList.remove("active");
+  }
 });
 
+// Close Success
 closeSuccessBtn.addEventListener("click", closeSuccess);

@@ -121,6 +121,17 @@
   color: gray;
 }
 
+.pop-up-txt-side .errMsg {
+  font-size: 12px;
+  visibility: hidden;
+  color: var(--primary);
+  margin: 0;
+}
+
+.pop-up-txt-side .errMsg.active {
+  visibility: visible;
+}
+
 /* Overlay */
 .overlay {
   position: fixed;
