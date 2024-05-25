@@ -4,10 +4,15 @@
   --primary: #ed6538;
 }
 
-/* Success & Pop Up CARD */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+/* Success & Pop Up modal */
 
-.pop-up-card,
-.success-card {
+.pop-up-modal,
+.success-modal {
   background: white;
   font-family: "Poppins";
   border-radius: 10px;
@@ -15,9 +20,9 @@
   z-index: 3000;
 }
 
-/* Pop Up CARD */
+/* Pop Up modal */
 
-.pop-up-card {
+.pop-up-modal {
   width: 600px;
   height: 300px;
   display: flex;
@@ -25,7 +30,12 @@
   position: absolute;
   bottom: 50%;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%) scale(0);
+  transition: 200ms ease-in-out;
+}
+
+.pop-up-modal.active {
+  transform: translate(-50%, 50%) scale(1);
 }
 
 /* Children */
@@ -60,13 +70,14 @@
 }
 
 .pop-up-txt-side .txt-box h2,
-.success-card h2 {
+.success-modal h2 {
   font-weight: 700;
   font-size: 30px;
   margin: 0 0 5px 0;
 }
 .pop-up-txt-side .txt-box p {
   font-weight: 600;
+  font-size: 14px;
   margin: 0;
 }
 
@@ -110,11 +121,27 @@
   color: gray;
 }
 
-/* Success CARD */
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
 
-.success-card {
-  width: 270px;
-  height: 300px;
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+/* Success modal */
+
+.success-modal {
+  width: 300px;
+  height: 420px;
   padding: 70px 30px;
   display: flex;
   flex-direction: column;
@@ -123,10 +150,23 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
 }
 
-.success-card .fa-check {
+.success-modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.success-modal .fa-circle-xmark {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.success-modal .fa-circle-xmark:hover {
+  cursor: pointer;
+}
+.success-modal .fa-check {
   color: var(--primary);
   font-size: 40px;
   padding: 20px;
@@ -144,15 +184,18 @@
 /* Mobile Screen */
 
 @media screen and (max-width: 768px) {
-  .pop-up-card {
-    width: 400px;
-    height: 600px;
+  .pop-up-modal {
+    width: 350px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     bottom: 15px;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0) scale(0);
   }
 
+  .pop-up-modal.active {
+    transform: translate(-50%, 0) scale(1);
+  }
   /* Children */
 
   .pop-up-img-side,
