@@ -18,13 +18,15 @@
   z-index: 3000;
 }
 
-/* Image Side */
+/* Children */
 
 .pop-up-img-side,
 .pop-up-txt-side {
   width: 50%;
   height: 100%;
 }
+
+/* Image Side */
 
 .pop-up-img-side img {
   width: 100%;
@@ -95,4 +97,31 @@
 .pop-up-txt-side .check-box a {
   font-size: 10px;
   color: gray;
+}
+
+@media screen and (max-width: 768px) {
+  .pop-up-card {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Children */
+
+  .pop-up-img-side,
+  .pop-up-txt-side {
+    width: 100%;
+    height: 50%;
+  }
+
+  /* Image Side */
+
+  .pop-up-img-side img {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .pop-up-txt-side {
+    width: fit-content;
+  }
 }
